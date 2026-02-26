@@ -25,12 +25,12 @@ Uygulama 4 ana yapay zeka modülünden oluşmaktadır:
 ## 📱 Ekran Görüntüleri
 
 <div align="center">
-  <img src="screenshots/home_page_en.jpeg" width="22%" />
-  <img src="screenshots/home_page_tr.jpeg" width="22%" />
-  <img src="screenshots/remove_page.jpg" width="22%" />
-  <img src="screenshots/history_page.jpg" width="22%" />
-  <img src="screenshots/history_bg_clear.jpg" width="22%" />
-  <img src="screenshots/history_bg_change.jpg" width="22%" />
+  <img src="images/home_page_en.jpeg" width="22%" />
+  <img src="images/home_page_tr.jpeg" width="22%" />
+  <img src="images/remove_page.jpeg" width="22%" />
+  <img src="images/history_page.jpeg" width="22%" />
+  <img src="images/history_bg_clear.jpeg" width="22%" />
+  <img src="images/history_bg_change.jpeg" width="22%" />
 </div>
 
 ## 🛠️ Teknolojiler ve Mimari

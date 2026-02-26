@@ -19,7 +19,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?selectableItemBackgroundBorderless"
-            android:contentDescription="Geri"
+            android:contentDescription="@string/content_desc_back"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="?colorOnSurface" />
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Detay"
+            android:text="@string/label_detail"
             android:textColor="?colorOnSurface"
             android:textSize="@dimen/text_subtitle"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="@dimen/spacing_md"
                     android:paddingVertical="@dimen/spacing_xs"
-                    android:text="Modül Tipi"
+                    android:text="@string/label_module_type"
                     android:textColor="@color/primary_dark"
                     android:textSize="@dimen/text_caption"
                     android:textStyle="bold" />
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xs"
-                android:text="12 Eki 2026, 14:30"
+                android:text="@string/label_sample_date"
                 android:textColor="@color/text_secondary_light"
                 android:textSize="@dimen/text_caption" />
 
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
-                android:text="◀ Önce  |  Sonra ▶"
+                android:text="@string/label_before_after"
                 android:textColor="@color/text_tertiary_light"
                 android:textSize="@dimen/text_caption" />
 
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xl"
-                android:text="Orijinal Görsel"
+                android:text="@string/label_original_image"
                 android:textColor="?colorOnSurface"
                 android:textSize="@dimen/text_body"
                 android:textStyle="bold" />
@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_lg"
-                android:text="İşlenmiş Sonuç"
+                android:text="@string/label_processed_result"
                 android:textColor="?colorOnSurface"
                 android:textSize="@dimen/text_body"
                 android:textStyle="bold" />
@@ -181,7 +181,7 @@
                 android:layout_height="@dimen/button_height"
                 android:layout_marginEnd="@dimen/spacing_sm"
                 android:layout_weight="1"
-                android:text="Sil"
+                android:text="@string/btn_delete"
                 android:textAllCaps="false"
                 android:textColor="@color/error"
                 app:cornerRadius="@dimen/button_corner_radius_pill"
@@ -196,7 +196,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height"
                 android:layout_weight="1"
-                android:text="Galeriye Kaydet"
+                android:text="@string/btn_save_gallery"
                 android:textAllCaps="false"
                 app:backgroundTint="@color/accent_green"
                 app:cornerRadius="@dimen/button_corner_radius_pill"

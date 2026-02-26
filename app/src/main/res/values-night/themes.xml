@@ -18,6 +18,17 @@
         <item name="android:navigationBarColor">@color/background_dark</item>
         <!-- Error -->
         <item name="colorError">@color/error</item>
+        <!-- Pencere arka planı (siyah flash'ı engeller) -->
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:windowAnimationStyle">@style/FadeAnimation</item>
+    </style>
+
+    <!-- Yumuşak geçiş animasyonu -->
+    <style name="FadeAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@android:anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@android:anim/fade_out</item>
     </style>
 
     <!-- Splash Screen - Dark Mode -->

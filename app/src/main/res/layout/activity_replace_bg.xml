@@ -19,7 +19,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?selectableItemBackgroundBorderless"
-            android:contentDescription="Geri"
+            android:contentDescription="@string/content_desc_back"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="?colorOnSurface" />
 
@@ -92,7 +92,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_md"
                             android:gravity="center"
-                            android:text="AI ile arka plan değiştirmek\niçin görsel yükle"
+                            android:text="@string/dropzone_upload_replacebg"
                             android:textColor="@color/text_secondary_light"
                             android:textSize="@dimen/text_body" />
 
@@ -100,7 +100,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_xs"
-                            android:text="PNG, JPG, WEBP — max 2048×2048"
+                            android:text="@string/dropzone_formats_max_2048"
                             android:textColor="@color/text_tertiary_light"
                             android:textSize="@dimen/text_caption" />
                     </LinearLayout>
@@ -154,7 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_sm"
-                    android:text="Orijinal Görsel"
+                    android:text="@string/label_original_image"
                     android:textColor="@color/text_tertiary_light"
                     android:textSize="@dimen/text_caption" />
 
@@ -212,7 +212,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="• a tropical beach at sunset\n• a cozy marble kitchen\n• a futuristic neon city at night"
+                            android:text="@string/prompt_examples_body"
                             android:textColor="@color/text_secondary_light"
                             android:textSize="@dimen/text_caption" />
                     </LinearLayout>
@@ -260,7 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_sm"
-                android:text="✨ Arka plan başarıyla değiştirildi"
+                android:text="@string/success_replacebg"
                 android:textColor="@color/accent_green"
                 android:textSize="@dimen/text_caption"
                 android:textStyle="bold" />
@@ -302,7 +302,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_lg"
-                        android:text="Yapay zeka çalışıyor…"
+                        android:text="@string/loading_ai_working"
                         android:textColor="?colorOnSurface"
                         android:textSize="@dimen/text_subtitle"
                         android:textStyle="bold" />
@@ -311,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
-                        android:text="Yeni arka plan oluşturuluyor"
+                        android:text="@string/loading_replacebg"
                         android:textColor="@color/text_secondary_light"
                         android:textSize="@dimen/text_caption" />
                 </LinearLayout>

@@ -19,7 +19,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?selectableItemBackgroundBorderless"
-            android:contentDescription="Geri"
+            android:contentDescription="@string/content_desc_back"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="?colorOnSurface" />
 
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
-                        android:text="PNG, JPG, WEBP"
+                        android:text="@string/dropzone_formats_basic"
                         android:textColor="@color/text_tertiary_light"
                         android:textSize="@dimen/text_caption" />
                 </LinearLayout>
@@ -273,7 +273,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_lg"
-                        android:text="Yapay zeka çalışıyor…"
+                        android:text="@string/loading_ai_working"
                         android:textColor="?colorOnSurface"
                         android:textSize="@dimen/text_subtitle"
                         android:textStyle="bold" />
@@ -282,7 +282,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
-                        android:text="Nesne silme işlemi devam ediyor"
+                        android:text="@string/loading_cleanup"
                         android:textColor="@color/text_secondary_light"
                         android:textSize="@dimen/text_caption" />
                 </LinearLayout>

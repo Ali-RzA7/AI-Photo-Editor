@@ -19,7 +19,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?selectableItemBackgroundBorderless"
-            android:contentDescription="Geri"
+            android:contentDescription="@string/content_desc_back"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="?colorOnSurface" />
 
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_md"
                         android:gravity="center"
-                        android:text="Çözünürlüğü artırmak için\ngörsel yükle"
+                        android:text="@string/dropzone_upload_upscale"
                         android:textColor="@color/text_secondary_light"
                         android:textSize="@dimen/text_body" />
 
@@ -94,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
-                        android:text="PNG, JPG, WEBP — max 4096px"
+                        android:text="@string/dropzone_formats_max_4096"
                         android:textColor="@color/text_tertiary_light"
                         android:textSize="@dimen/text_caption" />
                 </LinearLayout>
@@ -165,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_sm"
                         android:layout_weight="1"
-                        android:text="Boyut bilgisi yükleniyor…"
+                        android:text="@string/loading_dimensions"
                         android:textColor="@color/primary_dark"
                         android:textSize="@dimen/text_caption"
                         android:textStyle="bold" />
@@ -224,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_sm"
                         android:layout_weight="1"
-                        android:text="Kalite artırma tamamlandı"
+                        android:text="@string/success_upscale"
                         android:textColor="@color/accent_green"
                         android:textSize="@dimen/text_caption"
                         android:textStyle="bold" />
@@ -268,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_lg"
-                        android:text="Yapay zeka çalışıyor…"
+                        android:text="@string/loading_ai_working"
                         android:textColor="?colorOnSurface"
                         android:textSize="@dimen/text_subtitle"
                         android:textStyle="bold" />
@@ -277,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_xs"
-                        android:text="Görüntü kalitesi artırılıyor"
+                        android:text="@string/loading_upscale"
                         android:textColor="@color/text_secondary_light"
                         android:textSize="@dimen/text_caption" />
                 </LinearLayout>

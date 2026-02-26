@@ -226,7 +226,7 @@ public class CleanupActivity extends AppCompatActivity {
             long ts = System.currentTimeMillis();
             String origPath = BitmapUtils.saveToInternalStorage(this, originalBitmap, "cleanup_orig_" + ts + ".jpg");
             String resultPath = BitmapUtils.saveToInternalStorage(this, resultBitmap, "cleanup_result_" + ts + ".jpg");
-            HistoryViewModel.saveToHistory(getApplication(), "Nesne Silme", origPath, resultPath);
+            HistoryViewModel.saveToHistory(getApplication(), getString(R.string.module_cleanup), origPath, resultPath);
         } catch (Exception e) {
             e.printStackTrace();
         }

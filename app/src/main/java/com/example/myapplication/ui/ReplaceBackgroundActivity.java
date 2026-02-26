@@ -185,7 +185,7 @@ public class ReplaceBackgroundActivity extends AppCompatActivity {
             long ts = System.currentTimeMillis();
             String origPath = BitmapUtils.saveToInternalStorage(this, originalBitmap, "replacebg_orig_" + ts + ".jpg");
             String resultPath = BitmapUtils.saveToInternalStorage(this, resultBitmap, "replacebg_result_" + ts + ".jpg");
-            HistoryViewModel.saveToHistory(getApplication(), "Arka Plan Değiştirme", origPath, resultPath);
+            HistoryViewModel.saveToHistory(getApplication(), getString(R.string.module_replacebg), origPath, resultPath);
         } catch (Exception e) {
             e.printStackTrace();
         }

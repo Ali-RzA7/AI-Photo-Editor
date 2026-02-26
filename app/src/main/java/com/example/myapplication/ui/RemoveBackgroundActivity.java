@@ -244,7 +244,7 @@ public class RemoveBackgroundActivity extends AppCompatActivity {
             long ts = System.currentTimeMillis();
             String origPath = BitmapUtils.saveToInternalStorage(this, originalBitmap, "removebg_orig_" + ts + ".jpg");
             String resultPath = BitmapUtils.saveToInternalStorage(this, resultBitmap, "removebg_result_" + ts + ".png");
-            HistoryViewModel.saveToHistory(getApplication(), "Arka Plan Silme", origPath, resultPath);
+            HistoryViewModel.saveToHistory(getApplication(), getString(R.string.module_removebg), origPath, resultPath);
         } catch (Exception e) {
             e.printStackTrace();
         }

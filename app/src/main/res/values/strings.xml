@@ -1,75 +1,116 @@
 <resources>
     <string name="app_name">AI Photo Editor</string>
 
-    <!-- Ana Ekran -->
+    <!-- Home Screen -->
     <string name="home_title">AI Photo Editor</string>
-    <string name="home_subtitle">Bugün ne yaratmak istersin?</string>
+    <string name="home_subtitle">What would you like to create today?</string>
 
-    <!-- Nesne Silme -->
-    <string name="cleanup_title">Nesne / Kişi Silme</string>
-    <string name="cleanup_description">Fotoğraftaki istenmeyen nesneleri veya kişileri parmağınızla çizerek silin</string>
-    <string name="cleanup_select_image">Görsel Seç</string>
-    <string name="cleanup_process">Sil ve Temizle</string>
-    <string name="cleanup_draw_mask">Silmek istediğiniz alanı çizin</string>
-    <string name="cleanup_brush_size">Fırça Boyutu</string>
-    <string name="cleanup_undo">Geri Al</string>
-    <string name="cleanup_clear">Temizle</string>
-    <string name="cleanup_mode_draw">✏️ Çizim</string>
+    <!-- Object Removal -->
+    <string name="cleanup_title">Object / Person Removal</string>
+    <string name="cleanup_description">Remove unwanted objects or people from your photos by drawing over them</string>
+    <string name="cleanup_select_image">Select Image</string>
+    <string name="cleanup_process">Erase &amp; Clean</string>
+    <string name="cleanup_draw_mask">Draw over the area you want to remove</string>
+    <string name="cleanup_brush_size">Brush Size</string>
+    <string name="cleanup_undo">Undo</string>
+    <string name="cleanup_clear">Clear</string>
+    <string name="cleanup_mode_draw">✏️ Draw</string>
     <string name="cleanup_mode_pan_zoom">🔍 Pan/Zoom</string>
 
-    <!-- Arka Plan Silme -->
-    <string name="removebg_title">Arka Plan Silme</string>
-    <string name="removebg_description">Tek dokunuşla fotoğrafınızın arka planını kaldırın</string>
-    <string name="removebg_process">Arka Planı Kaldır</string>
-    <string name="removebg_change_bg">Arka Plan Değiştir</string>
-    <string name="removebg_save_transparent">Şeffaf PNG Kaydet</string>
+    <!-- Background Removal -->
+    <string name="removebg_title">Background Removal</string>
+    <string name="removebg_description">Remove the background from your photos with a single tap</string>
+    <string name="removebg_process">Remove Background</string>
+    <string name="removebg_change_bg">Change Background</string>
+    <string name="removebg_save_transparent">Save Transparent PNG</string>
 
-    <!-- Kalite Artırma -->
-    <string name="upscale_title">Kalite Artırma</string>
-    <string name="upscale_description">Görsel kalitesini yapay zeka ile 2 katına çıkarın</string>
-    <string name="upscale_process">Kaliteyi Artır (2x)</string>
+    <!-- Upscale -->
+    <string name="upscale_title">Quality Enhancement</string>
+    <string name="upscale_description">Upscale your image quality by 2x with AI</string>
+    <string name="upscale_process">Enhance Quality (2x)</string>
 
-    <!-- AI Arka Plan Değiştirme -->
-    <string name="replacebg_title">AI Arka Plan Değiştir</string>
-    <string name="replacebg_description">Yapay zeka ile fotoğrafınıza yeni bir arka plan oluşturun</string>
-    <string name="replacebg_process">🪄 Yapay Zeka ile Arka Plan Üret</string>
-    <string name="replacebg_prompt_hint">Yeni arka planı tarif et (Örn: Karlı bir dağ zirvesi)…</string>
+    <!-- AI Replace Background -->
+    <string name="replacebg_title">AI Background Replace</string>
+    <string name="replacebg_description">Generate a new AI background for your photo</string>
+    <string name="replacebg_process">🪄 Generate AI Background</string>
+    <string name="replacebg_prompt_hint">Describe the new background (e.g. A snowy mountain peak)…</string>
 
-    <!-- Ortak -->
-    <string name="select_image">Görsel Seç</string>
-    <string name="select_from_gallery">Galeriden Seç</string>
-    <string name="take_photo">Fotoğraf Çek</string>
-    <string name="save_image">Görseli Kaydet</string>
-    <string name="share_image">Paylaş</string>
-    <string name="processing">İşleniyor…</string>
-    <string name="error_occurred">Bir hata oluştu</string>
-    <string name="success_saved">Görsel başarıyla kaydedildi</string>
-    <string name="permission_required">İzin gerekli</string>
-    <string name="permission_camera">Kamera erişimi için izin gereklidir</string>
-    <string name="permission_storage">Depolama erişimi için izin gereklidir</string>
-    <string name="no_image_selected">Yapay zeka ile düzenlemek için görsel yükle</string>
-    <string name="before">Önce</string>
-    <string name="after">Sonra</string>
-    <string name="retry">Tekrar Dene</string>
-    <string name="cancel">İptal</string>
-    <string name="ok">Tamam</string>
+    <!-- Common -->
+    <string name="select_image">Select Image</string>
+    <string name="select_from_gallery">Select from Gallery</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="save_image">Save Image</string>
+    <string name="share_image">Share</string>
+    <string name="processing">Processing…</string>
+    <string name="error_occurred">An error occurred</string>
+    <string name="success_saved">Image saved successfully</string>
+    <string name="permission_required">Permission required</string>
+    <string name="permission_camera">Camera access permission is required</string>
+    <string name="permission_storage">Storage access permission is required</string>
+    <string name="no_image_selected">Upload an image to edit with AI</string>
+    <string name="before">Before</string>
+    <string name="after">After</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
 
-    <!-- Geçmiş -->
-    <string name="history_title">Geçmiş Projelerim</string>
-    <string name="history_empty_title">Henüz hiç sihir yapmadın!</string>
-    <string name="history_empty_subtitle">Bir modül kullanarak ilk projenizi oluşturun</string>
-    <string name="history_deleted">Kayıt silindi</string>
-    <string name="history_description">Geçmiş çalışmalarınızı görün</string>
+    <!-- History -->
+    <string name="history_title">My Past Projects</string>
+    <string name="history_empty_title">No magic yet!</string>
+    <string name="history_empty_subtitle">Create your first project using a module</string>
+    <string name="history_deleted">Record deleted</string>
+    <string name="history_description">View your past work</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_title_1">Yapay Zeka ile Tanış</string>
-    <string name="onboarding_desc_1">Fotoğraflarındaki istenmeyen nesneleri tek dokunuşla sil veya arka planları tamamen değiştir.</string>
-    <string name="onboarding_title_2">Kaliteyi Zirveye Taşı</string>
-    <string name="onboarding_desc_2">Düşük çözünürlüklü görsellerini saniyeler içinde 2 katına kadar netleştir.</string>
-    <string name="onboarding_title_3">Hiçbir Şeyi Kaybetme</string>
-    <string name="onboarding_desc_3">Yaptığın tüm düzenlemeler cihazında güvenle saklanır. İstediğin zaman geçmiş projelerine dön.</string>
-    <string name="onboarding_skip">Geç</string>
-    <string name="onboarding_next">İleri</string>
-    <string name="onboarding_start">Başla</string>
+    <string name="onboarding_title_1">Meet AI</string>
+    <string name="onboarding_desc_1">Remove unwanted objects from your photos with a single touch or completely change backgrounds.</string>
+    <string name="onboarding_title_2">Maximize Quality</string>
+    <string name="onboarding_desc_2">Sharpen your low-resolution images up to 2x in seconds.</string>
+    <string name="onboarding_title_3">Never Lose Anything</string>
+    <string name="onboarding_desc_3">All your edits are safely stored on your device. Return to your past projects anytime.</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get Started</string>
+
+    <!-- Hardcoded UI Strings -->
+    <string name="content_desc_back">Back</string>
+    <string name="content_desc_delete">Delete</string>
+    <string name="dropzone_formats_basic">PNG, JPG, WEBP</string>
+    <string name="dropzone_formats_max_4096">PNG, JPG, WEBP — max 4096px</string>
+    <string name="dropzone_formats_max_2048">PNG, JPG, WEBP — max 2048×2048</string>
+    <string name="dropzone_upload_upscale">Upload an image to\nenhance resolution</string>
+    <string name="dropzone_upload_removebg">Upload an image to\nremove background</string>
+    <string name="dropzone_upload_replacebg">Upload an image to\nreplace background with AI</string>
+    <string name="label_original_image">Original Image</string>
+    <string name="label_processed_result">Processed Result</string>
+    <string name="label_before_after">◀ Before  |  After ▶</string>
+    <string name="label_detail">Detail</string>
+    <string name="label_module_type">Module Type</string>
+    <string name="label_sample_date">12 Oct 2026, 14:30</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_save_gallery">Save to Gallery</string>
+    <string name="loading_ai_working">AI is working…</string>
+    <string name="loading_cleanup">Object removal in progress</string>
+    <string name="loading_removebg">Removing background</string>
+    <string name="loading_upscale">Enhancing image quality</string>
+    <string name="loading_replacebg">Generating new background</string>
+    <string name="loading_dimensions">Loading dimension info…</string>
+    <string name="success_cleanup">Object removed successfully</string>
+    <string name="success_removebg">✨ Background removed</string>
+    <string name="success_upscale">Quality enhancement complete</string>
+    <string name="success_replacebg">✨ Background replaced successfully</string>
+    <string name="prompt_examples_title">💡 Example prompts:</string>
+    <string name="prompt_examples_body">• a tropical beach at sunset\n• a cozy marble kitchen\n• a futuristic neon city at night</string>
+
+    <!-- Language -->
+    <string name="language_title">Language</string>
+    <string name="language_turkish">🇹🇷 Türkçe</string>
+    <string name="language_english">🇬🇧 English</string>
+
+    <!-- History Module Types -->
+    <string name="module_cleanup">Object Removal</string>
+    <string name="module_removebg">Background Removal</string>
+    <string name="module_upscale">Quality Enhancement</string>
+    <string name="module_replacebg">Background Replace</string>
 
 </resources>

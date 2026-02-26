@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">AI Fotoğraf Düzenleyici</string>
+
+    <!-- Ana Ekran -->
+    <string name="home_title">AI Fotoğraf Düzenleyici</string>
+    <string name="home_subtitle">Bugün ne yaratmak istersin?</string>
+
+    <!-- Nesne Silme -->
+    <string name="cleanup_title">Nesne / Kişi Silme</string>
+    <string name="cleanup_description">Fotoğraftaki istenmeyen nesneleri veya kişileri parmağınızla çizerek silin</string>
+    <string name="cleanup_select_image">Görsel Seç</string>
+    <string name="cleanup_process">Sil ve Temizle</string>
+    <string name="cleanup_draw_mask">Silmek istediğiniz alanı çizin</string>
+    <string name="cleanup_brush_size">Fırça Boyutu</string>
+    <string name="cleanup_undo">Geri Al</string>
+    <string name="cleanup_clear">Temizle</string>
+    <string name="cleanup_mode_draw">✏️ Çizim</string>
+    <string name="cleanup_mode_pan_zoom">🔍 Pan/Zoom</string>
+
+    <!-- Arka Plan Silme -->
+    <string name="removebg_title">Arka Plan Silme</string>
+    <string name="removebg_description">Tek dokunuşla fotoğrafınızın arka planını kaldırın</string>
+    <string name="removebg_process">Arka Planı Kaldır</string>
+    <string name="removebg_change_bg">Arka Plan Değiştir</string>
+    <string name="removebg_save_transparent">Şeffaf PNG Kaydet</string>
+
+    <!-- Kalite Artırma -->
+    <string name="upscale_title">Kalite Artırma</string>
+    <string name="upscale_description">Görsel kalitesini yapay zeka ile 2 katına çıkarın</string>
+    <string name="upscale_process">Kaliteyi Artır (2x)</string>
+
+    <!-- AI Arka Plan Değiştirme -->
+    <string name="replacebg_title">AI Arka Plan Değiştir</string>
+    <string name="replacebg_description">Yapay zeka ile fotoğrafınıza yeni bir arka plan oluşturun</string>
+    <string name="replacebg_process">🪄 Yapay Zeka ile Arka Plan Üret</string>
+    <string name="replacebg_prompt_hint">Yeni arka planı tarif et (Örn: Karlı bir dağ zirvesi)…</string>
+
+    <!-- Ortak -->
+    <string name="select_image">Görsel Seç</string>
+    <string name="select_from_gallery">Galeriden Seç</string>
+    <string name="take_photo">Fotoğraf Çek</string>
+    <string name="save_image">Görseli Kaydet</string>
+    <string name="share_image">Paylaş</string>
+    <string name="processing">İşleniyor…</string>
+    <string name="error_occurred">Bir hata oluştu</string>
+    <string name="success_saved">Görsel başarıyla kaydedildi</string>
+    <string name="permission_required">İzin gerekli</string>
+    <string name="permission_camera">Kamera erişimi için izin gereklidir</string>
+    <string name="permission_storage">Depolama erişimi için izin gereklidir</string>
+    <string name="no_image_selected">Yapay zeka ile düzenlemek için görsel yükle</string>
+    <string name="before">Önce</string>
+    <string name="after">Sonra</string>
+    <string name="retry">Tekrar Dene</string>
+    <string name="cancel">İptal</string>
+    <string name="ok">Tamam</string>
+
+    <!-- Geçmiş -->
+    <string name="history_title">Geçmiş Projelerim</string>
+    <string name="history_empty_title">Henüz hiç sihir yapmadın!</string>
+    <string name="history_empty_subtitle">Bir modül kullanarak ilk projenizi oluşturun</string>
+    <string name="history_deleted">Kayıt silindi</string>
+    <string name="history_description">Geçmiş çalışmalarınızı görün</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Yapay Zeka ile Tanış</string>
+    <string name="onboarding_desc_1">Fotoğraflarındaki istenmeyen nesneleri tek dokunuşla sil veya arka planları tamamen değiştir.</string>
+    <string name="onboarding_title_2">Kaliteyi Zirveye Taşı</string>
+    <string name="onboarding_desc_2">Düşük çözünürlüklü görsellerini saniyeler içinde 2 katına kadar netleştir.</string>
+    <string name="onboarding_title_3">Hiçbir Şeyi Kaybetme</string>
+    <string name="onboarding_desc_3">Yaptığın tüm düzenlemeler cihazında güvenle saklanır. İstediğin zaman geçmiş projelerine dön.</string>
+    <string name="onboarding_skip">Geç</string>
+    <string name="onboarding_next">İleri</string>
+    <string name="onboarding_start">Başla</string>
+
+    <!-- Hardcoded UI Strings -->
+    <string name="content_desc_back">Geri</string>
+    <string name="content_desc_delete">Sil</string>
+    <string name="dropzone_formats_basic">PNG, JPG, WEBP</string>
+    <string name="dropzone_formats_max_4096">PNG, JPG, WEBP — max 4096px</string>
+    <string name="dropzone_formats_max_2048">PNG, JPG, WEBP — max 2048×2048</string>
+    <string name="dropzone_upload_upscale">Çözünürlüğü artırmak için\ngörsel yükle</string>
+    <string name="dropzone_upload_removebg">Arka planı kaldırmak için\ngörsel yükle</string>
+    <string name="dropzone_upload_replacebg">AI ile arka plan değiştirmek\niçin görsel yükle</string>
+    <string name="label_original_image">Orijinal Görsel</string>
+    <string name="label_processed_result">İşlenmiş Sonuç</string>
+    <string name="label_before_after">◀ Önce  |  Sonra ▶</string>
+    <string name="label_detail">Detay</string>
+    <string name="label_module_type">Modül Tipi</string>
+    <string name="label_sample_date">12 Eki 2026, 14:30</string>
+    <string name="btn_delete">Sil</string>
+    <string name="btn_save_gallery">Galeriye Kaydet</string>
+    <string name="loading_ai_working">Yapay zeka çalışıyor…</string>
+    <string name="loading_cleanup">Nesne silme işlemi devam ediyor</string>
+    <string name="loading_removebg">Arka plan kaldırılıyor</string>
+    <string name="loading_upscale">Görüntü kalitesi artırılıyor</string>
+    <string name="loading_replacebg">Yeni arka plan oluşturuluyor</string>
+    <string name="loading_dimensions">Boyut bilgisi yükleniyor…</string>
+    <string name="success_cleanup">Nesne başarıyla silindi</string>
+    <string name="success_removebg">✨ Arka plan kaldırıldı</string>
+    <string name="success_upscale">Kalite artırma tamamlandı</string>
+    <string name="success_replacebg">✨ Arka plan başarıyla değiştirildi</string>
+    <string name="prompt_examples_title">💡 Örnek prompt\'lar:</string>
+    <string name="prompt_examples_body">• a tropical beach at sunset\n• a cozy marble kitchen\n• a futuristic neon city at night</string>
+
+    <!-- Dil -->
+    <string name="language_title">Dil</string>
+    <string name="language_turkish">🇹🇷 Türkçe</string>
+    <string name="language_english">🇬🇧 English</string>
+
+    <!-- Geçmiş Modül Tipleri -->
+    <string name="module_cleanup">Nesne Silme</string>
+    <string name="module_removebg">Arka Plan Silme</string>
+    <string name="module_upscale">Kalite Artırma</string>
+    <string name="module_replacebg">Arka Plan Değiştirme</string>
+
+</resources>

@@ -177,7 +177,7 @@ public class UpscaleActivity extends AppCompatActivity {
             long ts = System.currentTimeMillis();
             String origPath = BitmapUtils.saveToInternalStorage(this, originalBitmap, "upscale_orig_" + ts + ".jpg");
             String resultPath = BitmapUtils.saveToInternalStorage(this, resultBitmap, "upscale_result_" + ts + ".jpg");
-            HistoryViewModel.saveToHistory(getApplication(), "Kalite Artırma", origPath, resultPath);
+            HistoryViewModel.saveToHistory(getApplication(), getString(R.string.module_upscale), origPath, resultPath);
         } catch (Exception e) {
             e.printStackTrace();
         }

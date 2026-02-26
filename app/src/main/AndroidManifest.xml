@@ -25,16 +25,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AIPhotoEditor">
 
-        <!-- Ana Ekran -->
+        <!-- Splash Screen (Launcher) -->
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AIPhotoEditor">
+            android:theme="@style/Theme.AIPhotoEditor.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Onboarding -->
+        <activity
+            android:name=".ui.OnboardingActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- Ana Ekran -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
 
         <!-- Nesne/Kişi Silme -->
         <activity

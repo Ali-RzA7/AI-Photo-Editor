@@ -61,4 +61,15 @@
     <string name="history_deleted">Kayıt silindi</string>
     <string name="history_description">Geçmiş çalışmalarınızı görün</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Yapay Zeka ile Tanış</string>
+    <string name="onboarding_desc_1">Fotoğraflarındaki istenmeyen nesneleri tek dokunuşla sil veya arka planları tamamen değiştir.</string>
+    <string name="onboarding_title_2">Kaliteyi Zirveye Taşı</string>
+    <string name="onboarding_desc_2">Düşük çözünürlüklü görsellerini saniyeler içinde 2 katına kadar netleştir.</string>
+    <string name="onboarding_title_3">Hiçbir Şeyi Kaybetme</string>
+    <string name="onboarding_desc_3">Yaptığın tüm düzenlemeler cihazında güvenle saklanır. İstediğin zaman geçmiş projelerine dön.</string>
+    <string name="onboarding_skip">Geç</string>
+    <string name="onboarding_next">İleri</string>
+    <string name="onboarding_start">Başla</string>
+
 </resources>

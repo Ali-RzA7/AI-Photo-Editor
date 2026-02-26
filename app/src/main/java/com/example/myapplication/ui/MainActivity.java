@@ -25,9 +25,28 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Dil değişimi sonrası yumuşak fade-in
+        binding.getRoot().setAlpha(0f);
+        binding.getRoot().animate()
+                .alpha(1f)
+                .setDuration(300)
+                .setStartDelay(50)
+                .start();
+
         setupCardAnimations();
         setupClickListeners();
         updateLanguageToggle();
+    }
+
+    /**
+     * recreate() yerine finish + startActivity kullanarak siyah ekranı önler.
+     */
+    @Override
+    public void recreate() {
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        startActivity(getIntent());
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     private void setupCardAnimations() {
@@ -65,27 +84,34 @@ public class MainActivity extends AppCompatActivity {
         binding.btnLanguage.setOnClickListener(v -> toggleLanguage());
     }
 
-    /**
-     * Mevcut dil durumuna göre buton metnini günceller.
-     */
     private void updateLanguageToggle() {
         String currentLang = getCurrentLanguage();
         if ("tr".equals(currentLang)) {
-            binding.btnLanguage.setText("🇹🇷 TR");
+            binding.btnLanguage.setText("\uD83C\uDDF9\uD83C\uDDF7 TR");
         } else {
-            binding.btnLanguage.setText("🇬🇧 EN");
+            binding.btnLanguage.setText("\uD83C\uDDEC\uD83C\uDDE7 EN");
         }
     }
 
     /**
-     * Tek tıkla dili değiştirir: TR → EN, EN → TR
+     * Önce UI'ı fade-out yapar, sonra dili değiştirir.
+     * Böylece kullanıcı siyah ekran görmez, yumuşak geçiş yaşar.
      */
     private void toggleLanguage() {
+        binding.btnLanguage.setEnabled(false);
         String currentLang = getCurrentLanguage();
         String newLang = "tr".equals(currentLang) ? "en" : "tr";
-        AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.forLanguageTags(newLang)
-        );
+
+        // Fade out → dil değiştir
+        binding.getRoot().animate()
+                .alpha(0f)
+                .setDuration(200)
+                .withEndAction(() -> {
+                    AppCompatDelegate.setApplicationLocales(
+                            LocaleListCompat.forLanguageTags(newLang)
+                    );
+                })
+                .start();
     }
 
     private String getCurrentLanguage() {

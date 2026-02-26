@@ -34,7 +34,7 @@
     <!-- Splash Screen - Dark Mode -->
     <style name="Theme.AIPhotoEditor.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/primary_dark</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo_splash</item>
         <item name="postSplashScreenTheme">@style/Theme.AIPhotoEditor</item>
     </style>
 </resources>

@@ -25,28 +25,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Dil değişimi sonrası yumuşak fade-in
-        binding.getRoot().setAlpha(0f);
-        binding.getRoot().animate()
-                .alpha(1f)
-                .setDuration(300)
-                .setStartDelay(50)
-                .start();
+        // Dil değişiminden geliyorsa yumuşak fade-in uygula
+        if (savedInstanceState != null || getIntent().getBooleanExtra("lang_change", false)) {
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
 
         setupCardAnimations();
         setupClickListeners();
         updateLanguageToggle();
-    }
-
-    /**
-     * recreate() yerine finish + startActivity kullanarak siyah ekranı önler.
-     */
-    @Override
-    public void recreate() {
-        finish();
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        startActivity(getIntent());
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     private void setupCardAnimations() {
@@ -80,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         binding.cardHistory.setOnClickListener(v ->
                 animateCardClick(v, () -> startActivity(new Intent(this, HistoryActivity.class))));
 
-        // Dil Toggle — tek tıkla TR↔EN geçişi
+        // Dil Toggle
         binding.btnLanguage.setOnClickListener(v -> toggleLanguage());
     }
 
@@ -94,22 +80,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Önce UI'ı fade-out yapar, sonra dili değiştirir.
-     * Böylece kullanıcı siyah ekran görmez, yumuşak geçiş yaşar.
+     * Dil değiştirme akışı:
+     * 1. Butonu devre dışı bırak
+     * 2. UI'ı fade-out et (200ms)
+     * 3. Activity'yi kapat + yeni dille yeniden başlat (fade geçişli)
+     * 4. setApplicationLocales çağır
+     *
+     * Siyah ekran asla görünmez çünkü:
+     * - finish + startActivity arasında fade animasyonu
+     * - Yeni Activity windowBackground ile uygulamanın arka plan rengini gösterir
      */
     private void toggleLanguage() {
         binding.btnLanguage.setEnabled(false);
         String currentLang = getCurrentLanguage();
         String newLang = "tr".equals(currentLang) ? "en" : "tr";
 
-        // Fade out → dil değiştir
+        // UI fade out
         binding.getRoot().animate()
                 .alpha(0f)
                 .setDuration(200)
                 .withEndAction(() -> {
+                    // Önce dili ayarla
                     AppCompatDelegate.setApplicationLocales(
                             LocaleListCompat.forLanguageTags(newLang)
                     );
+
+                    // Activity'yi yumuşak geçişle yeniden başlat
+                    Intent intent = getIntent();
+                    intent.putExtra("lang_change", true);
+                    finish();
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 })
                 .start();
     }

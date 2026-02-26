@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Quota Badge Background (Dark mode: deep muted violet) -->
+    <color name="bg_quota_badge">#2B243B</color>
+</resources>

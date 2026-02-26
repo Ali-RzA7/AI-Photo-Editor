@@ -63,6 +63,76 @@
             android:textColor="@color/text_secondary_light"
             android:textSize="@dimen/text_subtitle" />
 
+        <!-- ===== Kota Kartı ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_quota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            app:cardBackgroundColor="@color/surface_light"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/primary"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_md">
+
+                <!-- İkon -->
+                <TextView
+                    android:id="@+id/txt_quota_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✨"
+                    android:textSize="28sp" />
+
+                <!-- Metin Alanı -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_quota_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quota_title"
+                        android:textColor="?colorOnSurface"
+                        android:textSize="@dimen/text_body"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_quota_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/quota_remaining"
+                        android:textColor="@color/text_secondary_light"
+                        android:textSize="@dimen/text_caption" />
+                </LinearLayout>
+
+                <!-- Kredi Sayısı Badge -->
+                <TextView
+                    android:id="@+id/txt_quota_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_quota_badge"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="6dp"
+                    android:text="8/8"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- ===== Kart 1: Nesne / Kişi Silme ===== -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_cleanup"

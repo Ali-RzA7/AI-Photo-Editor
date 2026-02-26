@@ -7,17 +7,20 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.core.os.LocaleListCompat;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityMainBinding;
+import com.example.myapplication.util.QuotaManager;
 
 /**
- * Ana Ekran - 4 modül kartını, geçmiş butonunu ve dil toggle'ını gösterir.
+ * Ana Ekran - 4 modül kartı, geçmiş butonu, dil toggle ve kota göstergesi.
  */
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private QuotaManager quotaManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +28,26 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Dil değişiminden geliyorsa yumuşak fade-in uygula
+        // Dil değişiminden geliyorsa yumuşak fade-in
         if (savedInstanceState != null || getIntent().getBooleanExtra("lang_change", false)) {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
+
+        quotaManager = QuotaManager.getInstance(this);
 
         setupCardAnimations();
         setupClickListeners();
         updateLanguageToggle();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateQuotaCard();
+    }
+
     private void setupCardAnimations() {
-        View[] cards = {binding.cardCleanup, binding.cardRemoveBg, binding.cardUpscale, binding.cardReplaceBg, binding.cardHistory};
+        View[] cards = {binding.cardQuota, binding.cardCleanup, binding.cardRemoveBg, binding.cardUpscale, binding.cardReplaceBg, binding.cardHistory};
         for (int i = 0; i < cards.length; i++) {
             cards[i].setAlpha(0f);
             cards[i].setTranslationY(100f);
@@ -70,6 +81,44 @@ public class MainActivity extends AppCompatActivity {
         binding.btnLanguage.setOnClickListener(v -> toggleLanguage());
     }
 
+    /**
+     * Kota kartını günceller.
+     * Hak varsa: yeşil tonlu, "X/8" badge
+     * Hak bittiyse: turuncu tonlu, geri sayım
+     */
+    private void updateQuotaCard() {
+        quotaManager.checkAndResetDailyQuota();
+        int remaining = quotaManager.getRemainingCredits();
+        int max = quotaManager.getMaxCredits();
+
+        if (remaining > 0) {
+            // Hakkı var — pozitif durum
+            binding.txtQuotaIcon.setText("✨");
+            binding.txtQuotaTitle.setText(getString(R.string.quota_title));
+            binding.txtQuotaSubtitle.setText(getString(R.string.quota_remaining));
+            binding.txtQuotaBadge.setText(remaining + "/" + max);
+            binding.txtQuotaBadge.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            binding.txtQuotaTitle.setTextColor(resolveColorAttr(android.R.attr.textColorPrimary));
+            binding.cardQuota.setStrokeColor(ContextCompat.getColor(this, R.color.primary));
+        } else {
+            // Hakkı bitti — geri sayım
+            String timeLeft = quotaManager.getTimeUntilMidnight();
+            binding.txtQuotaIcon.setText("⏳");
+            binding.txtQuotaTitle.setText(getString(R.string.quota_exhausted_title));
+            binding.txtQuotaSubtitle.setText(getString(R.string.quota_exhausted_subtitle, timeLeft));
+            binding.txtQuotaBadge.setText("0/" + max);
+            binding.txtQuotaBadge.setTextColor(ContextCompat.getColor(this, R.color.text_tertiary_light));
+            binding.txtQuotaTitle.setTextColor(ContextCompat.getColor(this, R.color.text_secondary_light));
+            binding.cardQuota.setStrokeColor(ContextCompat.getColor(this, R.color.text_tertiary_light));
+        }
+    }
+
+    private int resolveColorAttr(int attr) {
+        android.util.TypedValue typedValue = new android.util.TypedValue();
+        getTheme().resolveAttribute(attr, typedValue, true);
+        return ContextCompat.getColor(this, typedValue.resourceId);
+    }
+
     private void updateLanguageToggle() {
         String currentLang = getCurrentLanguage();
         if ("tr".equals(currentLang)) {
@@ -79,33 +128,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Dil değiştirme akışı:
-     * 1. Butonu devre dışı bırak
-     * 2. UI'ı fade-out et (200ms)
-     * 3. Activity'yi kapat + yeni dille yeniden başlat (fade geçişli)
-     * 4. setApplicationLocales çağır
-     *
-     * Siyah ekran asla görünmez çünkü:
-     * - finish + startActivity arasında fade animasyonu
-     * - Yeni Activity windowBackground ile uygulamanın arka plan rengini gösterir
-     */
     private void toggleLanguage() {
         binding.btnLanguage.setEnabled(false);
         String currentLang = getCurrentLanguage();
         String newLang = "tr".equals(currentLang) ? "en" : "tr";
 
-        // UI fade out
         binding.getRoot().animate()
                 .alpha(0f)
                 .setDuration(200)
                 .withEndAction(() -> {
-                    // Önce dili ayarla
                     AppCompatDelegate.setApplicationLocales(
                             LocaleListCompat.forLanguageTags(newLang)
                     );
-
-                    // Activity'yi yumuşak geçişle yeniden başlat
                     Intent intent = getIntent();
                     intent.putExtra("lang_change", true);
                     finish();

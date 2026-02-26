@@ -58,7 +58,7 @@ public class RetrofitClient {
 
                     // 402 kontrolü — kredi bitti, yedek anahtara geç
                     if (response.code() == 402 && !useFallbackKey.get()) {
-                        Log.w(TAG, "402 alındı — yedek API anahtarına geçiliyor...");
+                        Log.w(TAG, "Yedek API anahtarına geçiliyor...");
 
                         // Eski response'u kapat (hafıza sızıntısı önleme)
                         response.close();

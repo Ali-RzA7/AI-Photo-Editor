@@ -113,4 +113,11 @@
     <string name="module_upscale">Kalite Artırma</string>
     <string name="module_replacebg">Arka Plan Değiştirme</string>
 
+    <!-- Kota -->
+    <string name="quota_title">Günlük Kullanım Hakkı</string>
+    <string name="quota_remaining">Haklar gece yarısı yenilenir</string>
+    <string name="quota_exhausted_title">Günlük hakkınız bitti</string>
+    <string name="quota_exhausted_subtitle">Yenilenme: %1$s</string>
+    <string name="quota_no_credits">Günlük kullanım hakkınız doldu. Lütfen yarın tekrar deneyin.</string>
+
 </resources>

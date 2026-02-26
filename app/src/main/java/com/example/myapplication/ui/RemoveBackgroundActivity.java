@@ -140,6 +140,7 @@ public class RemoveBackgroundActivity extends AppCompatActivity {
                     compositeBitmap = null;
                     showResultState();
                     saveHistory();
+                    com.example.myapplication.util.QuotaManager.getInstance(this).useCredit();
                     break;
                 case ERROR:
                     showLoading(false);

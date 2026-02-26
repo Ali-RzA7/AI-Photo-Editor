@@ -81,4 +81,6 @@
     <color name="shimmer_highlight_light">#FFF9FAFB</color>
     <color name="shimmer_base_dark">#FF334155</color>
     <color name="shimmer_highlight_dark">#FF475569</color>
+    <!-- Quota Badge Background (Light mode: soft lavender) -->
+    <color name="bg_quota_badge">#E8E0F7</color>
 </resources>

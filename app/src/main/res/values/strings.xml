@@ -113,4 +113,11 @@
     <string name="module_upscale">Quality Enhancement</string>
     <string name="module_replacebg">Background Replace</string>
 
+    <!-- Quota -->
+    <string name="quota_title">Daily Credits</string>
+    <string name="quota_remaining">Credits refresh at midnight</string>
+    <string name="quota_exhausted_title">Daily limit reached</string>
+    <string name="quota_exhausted_subtitle">Refreshes in: %1$s</string>
+    <string name="quota_no_credits">Your daily credits have been used up. Please try again tomorrow.</string>
+
 </resources>

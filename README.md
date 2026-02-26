@@ -1,40 +1,47 @@
-# 🎯 Rol ve Görev
-Sen uzman bir **Android Geliştirici** ve **UI/UX Tasarımcısısın**. Senden, Clipdrop API'lerini kullanarak "AI Destekli Fotoğraf Düzenleme Mobil Uygulaması" (Object Remover & Enhancer) geliştirmek için eksiksiz, modern ve üretime hazır (production-ready) bir Android projesi yazmanı istiyorum.
+# 🎨 AI Photo Editor
 
----
+Android platformu için geliştirilmiş, yapay zeka ile fotoğraf düzenleme uygulaması. İstenmeyen nesneler silinir, arka planlar kaldırılır, çözünürlük artırılır ve yeni arka planlar oluşturulur.
 
-Projeyi Android studioda açtım.
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Material Design](https://img.shields.io/badge/Material%20Design%203-757575?style=for-the-badge&logo=material-design&logoColor=white)
 
-## ⚙️ Teknik Gereksinimler ve Mimari
+## ✨ Temel Özellikler
+
+Uygulama 4 ana yapay zeka modülünden oluşmaktadır:
+
+* **🪄 Nesne & Kişi Silme (Inpainting):** Ekrana dokunarak çizilen maske ile fotoğraflardaki istenmeyen detaylar kusursuzca yok edilir.
+* **✂️ Arka Plan Kaldırma:** Tek dokunuşla portrelerin veya objelerin arka planını şeffaf (PNG) hale getirir.
+* **🌌 Arka Plan Değiştirme (Teleport):** Bir metin (prompt) girilerek ve yapay zeka yeni arka plan oluşturur.
+* **🔍 Kalite Artırma (Upscaling):** Düşük çözünürlüklü fotoğrafları yapay zeka ile kalite kaybı yaşamadan 2 katına kadar (maks 4096px) büyütür.
+
+### 🚀 Gelişmiş Sistem Özellikleri
+* **Yerel Çalışma Geçmişi:** İşlenen tüm fotoğraflar cihaz hafızasında ve Room Database üzerinde tutulur. İstenilen zamanda eski çalışmalara dönülebilir.
+* **Akıllı Kota Sistemi:** API maliyetlerini optimize etmek için günlük 8 kullanım hakkı (Gece yarısı otomatik yenilenme).
+* **Yedekli API (Failover) Mimarisi:** Kredi bitimi (HTTP 402) durumunda OkHttp Interceptor ile otomatik olarak yedek API anahtarına geçiş.
+* **Çoklu Dil Desteği:** İngilizce ve Türkçe dil seçenekleri (Android 13+ Per-App Language uyumlu).
+* **Önce/Sonra Karşılaştırması:** Sonuçları anında değerlendirmek için parmakla kaydırılabilir özel "Before/After Slider" görünümü.
+
+## 📱 Ekran Görüntüleri
+
+<div align="center">
+  <img src="screenshots/home_page_en.jpeg" width="22%" />
+  <img src="screenshots/home_page_tr.jpeg" width="22%" />
+  <img src="screenshots/remove_page.jpg" width="22%" />
+  <img src="screenshots/history_page.jpg" width="22%" />
+  <img src="screenshots/history_bg_clear.jpg" width="22%" />
+  <img src="screenshots/history_bg_change.jpg" width="22%" />
+</div>
+
+## 🛠️ Teknolojiler ve Mimari
+
+Bu proje, modern Android geliştirme standartlarına uygun olarak tasarlanmıştır.
+
 * **Dil:** Java
-* **Platform:** Minimum API 30 (Android 11.0+) şeklinde oluşturdum.
-* **Mimari:** MVVM (Model-View-ViewModel) veya Clean Architecture. Repository pattern kullanılmalı.
-* **UI / UX:** Modern Material Design 3 bileşenleri, şık animasyonlar, karanlık mod desteği. Gelişmiş bir kullanıcı deneyimi hedefleniyor.
-* **Ağ Katmanı:** Retrofit2 ve OkHttp3. API istekleri asenkron yapılmalı (Java'ya uygun şekilde Retrofit Callbacks, ExecutorService veya RxJava kullanarak, ana thread'i asla bloklamadan).
-* **Görsel Yükleme:** Glide veya Picasso.
-* **Güvenlik:** API Key doğrudan kod içinde (hardcoded) olmamalı. `local.properties` üzerinden `BuildConfig` ile çekilmeli veya basit bir Node.js proxy yapısı kurulmuş gibi tasarlanıp Base URL ona göre ayarlanmalı. (Şimdilik `local.properties` yaklaşımını koda dök).
-* **Performans:** Büyük çözünürlüklü görseller (Out of Memory - OOM hatalarını önlemek için) işlenirken bellekte optimize edilmeli (Bitmap ölçeklendirme). İşlem sırasında modern bir Progress Indicator (örneğin Lottie animasyonu veya Shimmer) gösterilmeli.
-
----
-
-## 📱 Uygulama Özellikleri (Hedeflenen 3 Ana Modül)
-
-### 1. Nesne/Kişi Silme (Cleanup / Inpainting)
-* Kullanıcı galeriden veya kameradan görsel seçer.
-* **Önemli:** Ekranda fotoğrafın üzerine parmakla çizim yapılabilen bir Custom View (`MaskDrawingView`) olmalıdır.
-* Çizilen maske, API'nin beklediği formata (orijinal resimle aynı boyutta, sadece 0 (siyah) ve 255 (beyaz) piksellerinden oluşan Siyah-Beyaz bir PNG maskesi) dönüştürülmelidir.
-* **API:** `POST https://clipdrop-api.co/cleanup/v1` (Multipart: `image_file` ve `mask_file` PNG).
-* Sonuç geldiğinde Custom bir "Önce / Sonra (Before/After) Slider" View ile kullanıcıya sunulmalıdır.
-
-### 2. Arka Plan Silme (Remove Background)
-* Kullanıcı görsel seçer, tek tuşla işlem başlar.
-* **API:** `POST https://clipdrop-api.co/remove-background/v1` (Multipart: `image_file`).
-* Dönen şeffaf PNG ekranda gösterilir. Kullanıcıya sonucun arkasına galeriden yeni bir arka plan ekleme veya şeffaf PNG olarak kaydetme opsiyonu sunulur.
-
-### 3. Görüntü Kalite Artırma (Upscale)
-* Kullanıcı görsel seçer. Orijinal genişlik ve yükseklik değerleri (maksimum 4096 px olacak şekilde) 2 katına çıkarılacak şekilde hesaplanır (`target_width` ve `target_height`).
-* **API:** `POST https://clipdrop-api.co/image-upscaling/v1/upscale` (Multipart: `image_file`, data: `target_width`, `target_height`).
-* İşlem bitince "Önce / Sonra Slider" ile detaylar gösterilir.
-
----
-Projeyi adımlar halide yap, tek seferde yapmaan gerek yok. Bir plan hazırla ve o planı uygun bir şekilde yap.
+* **Minimum SDK:** 30 (Android 11.0)
+* **Mimari:** MVVM (Model-View-ViewModel) + Repository Pattern
+* **Ağ Katmanı:** Retrofit2 & OkHttp3 (Multipart Form Data)
+* **Veritabanı:** Room Database
+* **Asenkron İşlemler:** ExecutorService & LiveData
+* **Görsel İşleme:** Glide / Özel Bitmap Optimizasyonları (OOM Koruması)
+* **UI/UX:** Material Design 3, ViewPager2 (Onboarding), Custom Views (`MaskDrawingView`, `BeforeAfterSliderView`), Core Splashscreen API.

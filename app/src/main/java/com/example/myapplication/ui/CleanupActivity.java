@@ -176,6 +176,7 @@ public class CleanupActivity extends AppCompatActivity {
                     resultBitmap = result.getData();
                     showResultState();
                     saveHistory();
+                    com.example.myapplication.util.QuotaManager.getInstance(this).useCredit();
                     break;
                 case ERROR:
                     showLoading(false);

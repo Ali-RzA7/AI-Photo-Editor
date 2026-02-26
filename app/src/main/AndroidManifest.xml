@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- İzinler -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Android 13+ (API 33+) galeri okuma -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- Android 11-12 (API 30-32) galeri okuma -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AIPhotoEditor">
+
+        <!-- Ana Ekran -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AIPhotoEditor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Nesne/Kişi Silme -->
+        <activity
+            android:name=".ui.CleanupActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- Arka Plan Silme -->
+        <activity
+            android:name=".ui.RemoveBackgroundActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- Kalite Artırma -->
+        <activity
+            android:name=".ui.UpscaleActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- AI Arka Plan Değiştirme -->
+        <activity
+            android:name=".ui.ReplaceBackgroundActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- Geçmiş -->
+        <activity
+            android:name=".ui.HistoryActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+        <!-- Geçmiş Detay -->
+        <activity
+            android:name=".ui.HistoryDetailActivity"
+            android:theme="@style/Theme.AIPhotoEditor" />
+
+    </application>
+
+</manifest>

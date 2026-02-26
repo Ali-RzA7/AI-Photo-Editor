@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Premium Brand Colors ===== -->
+    <!-- Primary - Deep Indigo -->
+    <color name="primary">#FF4F46E5</color>
+    <color name="primary_dark">#FF4338CA</color>
+    <color name="primary_light">#FF818CF8</color>
+    <color name="primary_surface">#FFF0EFFF</color>
+    <color name="on_primary">#FFFFFFFF</color>
+
+    <!-- Secondary - Ocean Blue -->
+    <color name="secondary">#FF0EA5E9</color>
+    <color name="secondary_dark">#FF0284C7</color>
+    <color name="secondary_light">#FF38BDF8</color>
+    <color name="secondary_surface">#FFEFF8FF</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+
+    <!-- Tertiary - Rose Pink -->
+    <color name="tertiary">#FFEC4899</color>
+    <color name="tertiary_surface">#FFFDF2F8</color>
+    <color name="on_tertiary">#FFFFFFFF</color>
+
+    <!-- Accent - Emerald (başarı/kaydetme) -->
+    <color name="accent_green">#FF10B981</color>
+    <color name="accent_green_surface">#FFECFDF5</color>
+
+    <!-- ===== Light Mode Surfaces ===== -->
+    <color name="background_light">#FFF9FAFB</color>
+    <color name="surface_light">#FFFFFFFF</color>
+    <color name="surface_variant_light">#FFF3F4F6</color>
+    <color name="on_background_light">#FF111827</color>
+    <color name="on_surface_light">#FF111827</color>
+    <color name="text_secondary_light">#FF6B7280</color>
+    <color name="text_tertiary_light">#FF9CA3AF</color>
+    <color name="divider_light">#FFE5E7EB</color>
+
+    <!-- ===== Dark Mode Surfaces ===== -->
+    <color name="background_dark">#FF0F172A</color>
+    <color name="surface_dark">#FF1E293B</color>
+    <color name="surface_variant_dark">#FF334155</color>
+    <color name="on_background_dark">#FFF1F5F9</color>
+    <color name="on_surface_dark">#FFF1F5F9</color>
+    <color name="text_secondary_dark">#FF94A3B8</color>
+    <color name="text_tertiary_dark">#FF64748B</color>
+    <color name="divider_dark">#FF334155</color>
+
+    <!-- ===== Card Module Icon Backgrounds ===== -->
+    <color name="icon_bg_cleanup">#FFEDE9FE</color>
+    <color name="icon_tint_cleanup">#FF7C3AED</color>
+    <color name="icon_bg_removebg">#FFDBEAFE</color>
+    <color name="icon_tint_removebg">#FF2563EB</color>
+    <color name="icon_bg_upscale">#FFFCE7F3</color>
+    <color name="icon_tint_upscale">#FFDB2777</color>
+
+    <!-- ===== Status ===== -->
+    <color name="error">#FFEF4444</color>
+    <color name="error_surface">#FFFEF2F2</color>
+    <color name="success">#FF10B981</color>
+    <color name="warning">#FFF59E0B</color>
+
+    <!-- ===== Dropzone ===== -->
+    <color name="dropzone_bg_light">#FFEEF2FF</color>
+    <color name="dropzone_stroke_light">#FFA5B4FC</color>
+    <color name="dropzone_bg_dark">#FF1E1B4B</color>
+    <color name="dropzone_stroke_dark">#FF6366F1</color>
+
+    <!-- ===== Mask Drawing ===== -->
+    <color name="mask_brush_color">#80FF4444</color>
+
+    <!-- ===== Standard ===== -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- ===== Loading Overlay ===== -->
+    <color name="overlay_dark">#B3000000</color>
+    <color name="loading_bg">#FF1E293B</color>
+
+    <!-- ===== Shimmer ===== -->
+    <color name="shimmer_base_light">#FFE5E7EB</color>
+    <color name="shimmer_highlight_light">#FFF9FAFB</color>
+    <color name="shimmer_base_dark">#FF334155</color>
+    <color name="shimmer_highlight_dark">#FF475569</color>
+</resources>

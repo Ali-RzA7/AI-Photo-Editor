@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">24dp</dimen>
+    <dimen name="card_corner_radius_lg">32dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+    <dimen name="card_icon_size">44dp</dimen>
+    <dimen name="card_icon_box_size">56dp</dimen>
+    <dimen name="card_icon_box_radius">16dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_corner_radius">16dp</dimen>
+    <dimen name="button_corner_radius_pill">28dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_height">64dp</dimen>
+
+    <!-- Dropzone -->
+    <dimen name="dropzone_corner_radius">24dp</dimen>
+    <dimen name="dropzone_icon_size">56dp</dimen>
+    <dimen name="dropzone_dash_width">3dp</dimen>
+    <dimen name="dropzone_dash_gap">8dp</dimen>
+
+    <!-- Mask Drawing -->
+    <dimen name="default_brush_size">40dp</dimen>
+    <dimen name="min_brush_size">10dp</dimen>
+    <dimen name="max_brush_size">100dp</dimen>
+
+    <!-- Before/After Slider -->
+    <dimen name="slider_handle_width">4dp</dimen>
+    <dimen name="slider_handle_circle">32dp</dimen>
+
+    <!-- Loading Card -->
+    <dimen name="loading_card_corner">28dp</dimen>
+    <dimen name="loading_card_padding">40dp</dimen>
+
+    <!-- Text -->
+    <dimen name="text_display">32sp</dimen>
+    <dimen name="text_title">22sp</dimen>
+    <dimen name="text_subtitle">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_overline">11sp</dimen>
+
+    <!-- Chevron -->
+    <dimen name="chevron_size">24dp</dimen>
+</resources>

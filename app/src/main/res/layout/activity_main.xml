@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xxl"
+        android:paddingBottom="@dimen/spacing_xl">
+
+        <!-- ===== Premium Header ===== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/home_title"
+            android:textColor="?colorOnSurface"
+            android:textSize="@dimen/text_display"
+            android:textStyle="bold"
+            android:letterSpacing="-0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="@string/home_subtitle"
+            android:textColor="@color/text_secondary_light"
+            android:textSize="@dimen/text_subtitle" />
+
+        <!-- ===== Kart 1: Nesne / Kişi Silme ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_cleanup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:rippleColor="@color/primary_surface"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_padding">
+
+                <!-- İkon Kutusu -->
+                <FrameLayout
+                    android:layout_width="@dimen/card_icon_box_size"
+                    android:layout_height="@dimen/card_icon_box_size"
+                    android:background="@drawable/bg_icon_cleanup">
+
+                    <ImageView
+                        android:layout_width="@dimen/spacing_lg"
+                        android:layout_height="@dimen/spacing_lg"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        app:tint="@color/icon_tint_cleanup" />
+                </FrameLayout>
+
+                <!-- Metin -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cleanup_title"
+                        android:textColor="?colorOnSurface"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/cleanup_description"
+                        android:textColor="@color/text_secondary_light"
+                        android:textSize="@dimen/text_caption"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <!-- Chevron -->
+                <ImageView
+                    android:layout_width="@dimen/chevron_size"
+                    android:layout_height="@dimen/chevron_size"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="@color/text_tertiary_light" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Kart 2: Arka Plan Silme ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_remove_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:rippleColor="@color/secondary_surface"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_padding">
+
+                <!-- İkon Kutusu -->
+                <FrameLayout
+                    android:layout_width="@dimen/card_icon_box_size"
+                    android:layout_height="@dimen/card_icon_box_size"
+                    android:background="@drawable/bg_icon_removebg">
+
+                    <ImageView
+                        android:layout_width="@dimen/spacing_lg"
+                        android:layout_height="@dimen/spacing_lg"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_crop"
+                        app:tint="@color/icon_tint_removebg" />
+                </FrameLayout>
+
+                <!-- Metin -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/removebg_title"
+                        android:textColor="?colorOnSurface"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/removebg_description"
+                        android:textColor="@color/text_secondary_light"
+                        android:textSize="@dimen/text_caption"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <!-- Chevron -->
+                <ImageView
+                    android:layout_width="@dimen/chevron_size"
+                    android:layout_height="@dimen/chevron_size"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="@color/text_tertiary_light" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Kart 3: Kalite Artırma ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_upscale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:rippleColor="@color/tertiary_surface"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_padding">
+
+                <!-- İkon Kutusu -->
+                <FrameLayout
+                    android:layout_width="@dimen/card_icon_box_size"
+                    android:layout_height="@dimen/card_icon_box_size"
+                    android:background="@drawable/bg_icon_upscale">
+
+                    <ImageView
+                        android:layout_width="@dimen/spacing_lg"
+                        android:layout_height="@dimen/spacing_lg"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_zoom"
+                        app:tint="@color/icon_tint_upscale" />
+                </FrameLayout>
+
+                <!-- Metin -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upscale_title"
+                        android:textColor="?colorOnSurface"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/upscale_description"
+                        android:textColor="@color/text_secondary_light"
+                        android:textSize="@dimen/text_caption"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <!-- Chevron -->
+                <ImageView
+                    android:layout_width="@dimen/chevron_size"
+                    android:layout_height="@dimen/chevron_size"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="@color/text_tertiary_light" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Kart 4: AI Arka Plan Değiştirme ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_replace_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:rippleColor="@color/primary_surface"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_padding">
+
+                <!-- İkon Kutusu -->
+                <FrameLayout
+                    android:layout_width="@dimen/card_icon_box_size"
+                    android:layout_height="@dimen/card_icon_box_size"
+                    android:background="@drawable/bg_icon_replacebg">
+
+                    <ImageView
+                        android:layout_width="@dimen/spacing_lg"
+                        android:layout_height="@dimen/spacing_lg"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_slideshow"
+                        app:tint="#FFE11D48" />
+                </FrameLayout>
+
+                <!-- Metin -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/replacebg_title"
+                        android:textColor="?colorOnSurface"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/replacebg_description"
+                        android:textColor="@color/text_secondary_light"
+                        android:textSize="@dimen/text_caption"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <!-- Chevron -->
+                <ImageView
+                    android:layout_width="@dimen/chevron_size"
+                    android:layout_height="@dimen/chevron_size"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="@color/text_tertiary_light" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Geçmiş Butonu ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/primary_surface"
+            app:strokeColor="@color/text_tertiary_light"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_padding">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    app:tint="@color/primary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_md"
+                    android:layout_weight="1"
+                    android:text="@string/history_title"
+                    android:textColor="?colorOnSurface"
+                    android:textSize="@dimen/text_body"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="@dimen/chevron_size"
+                    android:layout_height="@dimen/chevron_size"
+                    android:src="@android:drawable/ic_media_play"
+                    app:tint="@color/text_tertiary_light" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -30,6 +30,7 @@ android {
 
         // BuildConfig'e API Key ekleme
         buildConfigField("String", "CLIPDROP_API_KEY", "\"${localProperties.getProperty("CLIPDROP_API_KEY", "")}\"")
+        buildConfigField("String", "CLIPDROP_API_KEY1", "\"${localProperties.getProperty("CLIPDROP_API_KEY1", "")}\"")
     }
 
     buildTypes {
